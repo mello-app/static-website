@@ -1,9 +1,25 @@
----
-layout: default
----
+{% extends "default.html" %}
 
-{% include header.html %}
+{% block title %}{{section.title}} - doamatto{% endblock title %}
+{% block description %}{{ section.description | default(value=config.description) }}{% endblock description %}
+{% block ogtitle %}{{ section.title }} - doamatto{% endblock ogtitle %}
+{% block ogdesc %}{{ section.description }}{% endblock ogdesc %}
+{% block ogurl %}{{ section.permalink | safe }}{% endblock ogurl%}
 
-{{ content }}
-
-{% include footer.html %}
+{% block content %}
+<header>
+    {% include nav.html %}
+    <div class="content">
+        <h1>{{ page.title }}</h1>
+    </div>
+    <div class="nav"></div>
+</header>
+{{ page.content | safe }}
+<footer>
+    <div>
+        <img src="{{ '/assets/img/logo_w.svg' | relative_url }}" alt="Mello logo">
+        <h3 class="footer">Mello</h3>
+    </div>
+    <p class="footer">© 2020-2021 Mello and individual contributors. Code licensed under the 3-Clause BSD License and GNU GPL v3.0. All other material is licensed under the CC BY-4.0 license.</p>
+</footer>
+{% endblock content %}
