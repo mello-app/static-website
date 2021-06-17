@@ -15,6 +15,10 @@
         {% endblock %}
         <link rel="author" href="humans.txt" />
         
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
         <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
         {% block seo -%}
@@ -40,9 +44,8 @@
             <meta property="article:published_time" content="{{ page.date }}" />
           {%- endif %}
         {%- endblock seo -%}
-        <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
-        <link rel="stylesheet" href="https://cdn.doamatto.xyz/inter.min.css" integrity="sha384-qEZA/KrtbBoR2bh9+JzkzK+WdD0MRAHQ+GH+ABOTVhBeelVv3LjyMeGXXpmSvoGv" crossorigin="anonymous">
-        <link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
+        <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}"/>
+        <link rel="stylesheet" href="https://cdn.doamatto.xyz/inter.min.css" integrity="sha384-qEZA/KrtbBoR2bh9+JzkzK+WdD0MRAHQ+GH+ABOTVhBeelVv3LjyMeGXXpmSvoGv" crossorigin="anonymous"/>
     </head>
     <body>
       {% block content %}{% endblock %}
