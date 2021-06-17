@@ -20,4 +20,5 @@ render_emoji = true
 external_links_target_blank = true
 
 [extra]
+author = 'The Mello Team'
 ogimage = '/android-chrome-192x192.png'
