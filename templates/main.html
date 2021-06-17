@@ -1,10 +1,10 @@
 {% extends "default.html" %}
 
-{% block title %}{{section.title}} - doamatto{% endblock title %}
-{% block description %}{{ section.description | default(value=config.description) }}{% endblock description %}
-{% block ogtitle %}{{ section.title }} - doamatto{% endblock ogtitle %}
-{% block ogdesc %}{{ section.description }}{% endblock ogdesc %}
-{% block ogurl %}{{ section.permalink | safe }}{% endblock ogurl%}
+{% block title %}{{page.title}} - Mello{% endblock title %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+{% block ogtitle %}{{ page.title }} - Mello{% endblock ogtitle %}
+{% block ogdesc %}{{ page.description }}{% endblock ogdesc %}
+{% block ogurl %}{{ page.permalink | safe }}{% endblock ogurl%}
 
 {% block content %}
 <header>
