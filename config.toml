@@ -7,7 +7,7 @@ default_language = "en"
 
 compile_sass = true
 minify_html = true
-outdir_dir = "out"
+output_dir = "out"
 
 generate_feed = true
 feed_filename = "atom.xml"
