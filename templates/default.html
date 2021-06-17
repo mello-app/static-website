@@ -45,6 +45,6 @@
         <link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
     </head>
     <body>
-        {{ content }}
+      {% block content %}{% endblock %}
     </body>
 </html>
