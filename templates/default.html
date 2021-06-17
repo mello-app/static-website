@@ -49,6 +49,13 @@
     </head>
     <body>
       {% block content %}{% endblock %}
+      <footer>
+          <div>
+              <img src="{{ '/assets/img/logo_w.svg' | relative_url }}" alt="Mello logo">
+              <h3 class="footer">Mello</h3>
+          </div>
+          <p class="footer">© 2020-2021 Mello and individual contributors. Code licensed under the 3-Clause BSD License and GNU GPL v3.0. All other material is licensed under the CC BY-4.0 license.</p>
+      </footer>
     </body>
     <script async defer data-domain="getmello.org" src="https://alpine.gcp.doamatto.xyz/js/plausible.js"></script>
 </html>
