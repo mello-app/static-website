@@ -1,4 +1,4 @@
-# Mello Homepage ![Netlify Status](https://api.netlify.com/api/v1/badges/a415d1b0-d99d-4139-9885-dcd9c0a772e1/deploy-status)
+# Mello Homepage [![Zola site build](https://github.com/mello-app/static-website/actions/workflows/zola.yml/badge.svg)](https://github.com/mello-app/static-website/actions/workflows/zola.yml)![Netlify Status](https://api.netlify.com/api/v1/badges/a415d1b0-d99d-4139-9885-dcd9c0a772e1/deploy-status)
 Mello's homepage is generated using [Zola](https://getzola.org).
 
 ## Setup
