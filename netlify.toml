@@ -9,3 +9,12 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+
+[build]
+publish = "out"
+command = "zola build"
+    [build.environment]
+    ZOLA_VERSION = "0.13.0"
+    
+[context.deploy-preview]
+command = "zola build --base-url $DEPLOY_PRIME_URL"
