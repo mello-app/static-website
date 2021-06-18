@@ -161,4 +161,8 @@ footer {
         color: inherit;
         @include link-hover;
     }
+    .lesser {
+        opacity: .5;
+        font-style: italic;
+    } // Used for « lesser » important things such as the author and date of publication 
 }
