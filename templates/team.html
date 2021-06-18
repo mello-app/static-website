@@ -1,0 +1,47 @@
+{% extends "default.html" %}
+
+{% import "macros.html" as macros %}
+
+{% block title %}{{page.title}} - Mello{% endblock title %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+{% block ogtitle %}{{ page.title }} - Mello{% endblock ogtitle %}
+{% block ogdesc %}{{ page.description }}{% endblock ogdesc %}
+{% block ogurl %}{{ page.permalink | safe }}{% endblock ogurl%}
+
+{% block content %}
+<header>
+    {% include "partials/nav.html" %}
+    <div class="content">
+        <h1>{{ page.title }}</h1>
+    </div>
+    <div class="nav"></div>
+</header>
+<h3>Core Mello Team</h3>
+<div class="team">
+    {{ macros::member(
+        image="/assets/img/team/cyckl.svg",
+        name="Daniel Calderon",
+        role="Design, Web development",
+        url="https://cyckl.net"
+    ) }}
+    {{ macros::member(
+        image="/assets/img/team/doamatto.svg",
+        name="Matt Ronchetto",
+        role="Back-end, mobile development",
+        url="https://www.doamatto.xyz"
+    ) }}
+    {{ macros::member(
+        image="/assets/img/team/sd_madness.jpeg",
+        name="sd_madness",
+        role="Art"
+    ) }}
+</div>
+<h3>Emeritus Core Team</h3>
+<div class="team">
+    {{ macros::member(
+        image="/assets/img/team/ultra.jpeg",
+        name="Ultra",
+        role="Back-end, iOS development"
+    ) }}
+</div>
+{% endblock content %}
