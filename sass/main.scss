@@ -38,7 +38,8 @@ div.nav {
             text-decoration: none;
             color: #fff;
             margin-left: 10pt;
-            &:hover { color: #6EE6C7; }
+            &:hover,
+            &:focus { color: #6EE6C7; }
         }
     }
 }
@@ -114,7 +115,8 @@ div.team {
             color: #fff;
         }
         transition: 150ms box-shadow ease-in-out;
-        &:hover {
+        &:hover,
+        &:focus {
             @media (prefers-color-scheme: 'dark') {
                 box-shadow: 0 1em 8px #0f0f0f;
             }
