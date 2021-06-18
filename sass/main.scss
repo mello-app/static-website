@@ -1,12 +1,17 @@
 @charset 'utf-8';
 
-html,
 body {
     margin: 0;
     background: #fff;
     @media(prefers-color-scheme: 'dark') {
         background: #1b1b1b;
         color: #fff;
+    }
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    > div {
+        flex-grow: 2;
     }
 }
 
@@ -180,7 +185,7 @@ footer {
 
 // For blog posts and other pages that are mostly text
 .readable {
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: 0 calc(calc(16px*0.5)*4);
     max-width: calc(calc(16px*0.5)*152);
     a {
