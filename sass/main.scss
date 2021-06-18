@@ -89,9 +89,16 @@ div.nav {
     > div {
         display: flex;
         align-items: center;
-        > img {
+        > img,
+        > svg {
             margin-right: 0.5em;
             min-height: 100%;
+        }
+        > svg.dark {
+            @media(prefers-color-scheme: 'dark') {
+                g > path,
+                path { fill: #fff; }
+            }
         }
         > div { margin: 0.25em 0; }
         > div > a { line-height: 1em; }
