@@ -48,7 +48,9 @@
         <link rel="stylesheet" href="https://cdn.doamatto.xyz/inter.min.css" integrity="sha384-qEZA/KrtbBoR2bh9+JzkzK+WdD0MRAHQ+GH+ABOTVhBeelVv3LjyMeGXXpmSvoGv" crossorigin="anonymous"/>
     </head>
     <body>
-      {% block content %}{% endblock %}
+    	<div>
+    	  {% block content %}{% endblock %}
+    	</div>
       <footer>
           <div>
               <img src="/assets/logo_w.svg" alt="Mello logo">
@@ -57,9 +59,9 @@
           <ul>
             <li><a href="/blog" title="View the privacy policy">Blog.</a></li>
             <li><a href="/privacy" title="View the privacy policy">Privacy.</a></li>
-          </ul>
-          <p class="footer">© 2020-2021 Mello and individual contributors. Code licensed under the 3-Clause BSD License and GNU GPL v3.0. All other material is licensed under the CC BY-4.0 license.</p>
-      </footer>
+		</ul>
+		<p class="footer">© 2020-2021 Mello and individual contributors. Code licensed under the 3-Clause BSD License and GNU GPL v3.0. All other material is licensed under the CC BY-4.0 license.</p>
+    </footer>
     </body>
     <script async defer data-domain="getmello.org" src="https://alpine.gcp.doamatto.xyz/js/plausible.js"></script>
 </html>
