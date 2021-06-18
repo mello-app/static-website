@@ -10,6 +10,11 @@ body {
     }
 }
 
+@mixin link-hover {
+    &:hover,
+    &:focus { color: #6EE6C7; }
+}
+
 // Header
 header {
     padding: 2em 10vw;
@@ -38,8 +43,7 @@ div.nav {
             text-decoration: none;
             color: #fff;
             margin-left: 10pt;
-            &:hover,
-            &:focus { color: #6EE6C7; }
+            @include link-hover;
         }
     }
 }
@@ -155,7 +159,6 @@ footer {
     max-width: calc(calc(16px*0.5)*152);
     a {
         color: inherit;
-        &:hover,
-        &:focus { color: #6EE6C7; }
+        @include link-hover;
     }
 }
