@@ -9,32 +9,46 @@
     </div>
     <div class="nav"></div>
 </header>
-<h3>Core Mello Team</h3>
-<div class="team">
-    {{ macros::member(
-        image="/assets/team/cyckl.svg",
-        name="Daniel Calderon",
-        role="Design, Web development",
-        url="https://cyckl.net"
-    ) }}
-    {{ macros::member(
-        image="/assets/team/doamatto.svg",
-        name="Matt Ronchetto",
-        role="Back-end, mobile development",
-        url="https://www.doamatto.xyz"
-    ) }}
-    {{ macros::member(
-        image="/assets/team/sd_madness.jpeg",
-        name="sd_madness",
-        role="Art"
-    ) }}
-</div>
-<h3>Emeritus Core Team</h3>
-<div class="team">
-    {{ macros::member(
-        image="/assets/team/ultra.jpeg",
-        name="Ultra",
-        role="Back-end, iOS development"
-    ) }}
+<div class="readable">
+    <h3>Core Mello Team</h3>
+    <div class="team">
+        {# 
+            When locally served with `zola serve`, these images
+            will not load. This is due to the SVG file being
+            treated as a normal XML file, and not a vector file.
+    
+            This is a known issue by Keats (the developer of Zola).
+            And there is an issue working to fix it below. It does
+            not affect the built product, or the deployments on
+            Netlify.
+    
+            https://github.com/getzola/zola/issues/1308
+        #}
+        {{ macros::member(
+            image="/assets/team/cyckl.svg",
+            name="Daniel Calderon",
+            role="Design, Web development",
+            url="https://cyckl.net"
+        ) }}
+        {{ macros::member(
+            image="/assets/team/doamatto.svg",
+            name="Matt Ronchetto",
+            role="Back-end, mobile development",
+            url="https://www.doamatto.xyz"
+        ) }}
+        {{ macros::member(
+            image="/assets/team/sd_madness.jpeg",
+            name="sd_madness",
+            role="Art"
+        ) }}
+    </div>
+    <h3>Emeritus Core Team</h3>
+    <div class="team">
+        {{ macros::member(
+            image="/assets/team/ultra.jpeg",
+            name="Ultra",
+            role="Back-end, iOS development"
+        ) }}
+    </div>
 </div>
 {% endblock content %}
