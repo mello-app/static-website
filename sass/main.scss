@@ -147,3 +147,15 @@ footer {
     color: #fff;
     padding: 2em 10vw;
 }
+
+// For blog posts and other pages that are mostly text
+.readable {
+    margin: 1rem auto;
+    padding: 0 calc(calc(16px*0.5)*4);
+    max-width: calc(calc(16px*0.5)*152);
+    a {
+        color: inherit;
+        &:hover,
+        &:focus { color: #6EE6C7; }
+    }
+}
