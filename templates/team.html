@@ -1,12 +1,5 @@
-{% extends "default.html" %}
-
+{% extends "main.html" %}
 {% import "macros.html" as macros %}
-
-{% block title %}{{page.title}} - Mello{% endblock title %}
-{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
-{% block ogtitle %}{{ page.title }} - Mello{% endblock ogtitle %}
-{% block ogdesc %}{{ page.description }}{% endblock ogdesc %}
-{% block ogurl %}{{ page.permalink | safe }}{% endblock ogurl%}
 
 {% block content %}
 <header>
