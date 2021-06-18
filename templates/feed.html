@@ -8,14 +8,16 @@
     </div>
     <div class="nav"></div>
 </header>
-<div class="feed">
-    {% for page in section.pages %}
-    <article class="post">
-        <a href="{{ page.permalink | safe }}">
-            <p>{{ page.title }}</p>
-        </a>
-        <p>{{ page.description | safe }}</p>
-    </article>
-    {% endfor %}
+<div class="readable">
+    <div class="feed">
+        {% for page in section.pages %}
+        <article class="post">
+            <a href="{{ page.permalink | safe }}">
+                <p>{{ page.title }}</p>
+            </a>
+            <p>{{ page.description | safe }}</p>
+        </article>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
