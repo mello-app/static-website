@@ -1,0 +1,19 @@
+<div class="card">
+    {% if url %}
+    <a href="{{url}}">
+        <img class="cardPhoto" src="{{image}}" alt="{{name}}'s logo">
+        <div class="cardText">
+            <h3>{{name}}</h3>
+            <p>{{role}}</p>
+        </div>
+    </a>
+    {% else %}
+    <a href="#">
+        <img class="cardPhoto" src="{{image}}" alt="{{name}}'s logo">
+        <div class="cardText">
+            <h3>{{name}}</h3>
+            <p>{{role}}</p>
+        </div>
+    </a>
+    {% endif %}
+</div>

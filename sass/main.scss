@@ -1,0 +1,198 @@
+@charset 'utf-8';
+
+body {
+    margin: 0;
+    background: #fff;
+    @media(prefers-color-scheme: 'dark') {
+        background: #1b1b1b;
+        color: #fff;
+    }
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    > div {
+        flex-grow: 2;
+    }
+}
+
+@mixin link-hover {
+    &:hover,
+    &:focus { color: #6EE6C7; }
+}
+
+// Header
+header {
+    padding: 2em 10vw;
+    color: #fff;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('../assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.jumbotron { height: 90vh; }
+
+}
+
+// Navigation
+div.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navlinks {
+        display: flex;
+        align-items: center;
+        .navlink {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 10pt;
+            @include link-hover;
+        }
+    }
+}
+
+// Section block
+.section {
+    display: flex;
+    justify-content: center;
+    min-height: 75vh;
+    &.st1 {
+        background: #ddd;
+        @media(prefers-color-scheme: 'dark') {
+            background: #292929;
+            color: white;
+        }
+    }
+}
+
+// Content block
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2em;
+    // flex-direction: column-reverse;
+    @media (min-width: 900px) {
+        flex-direction: row;
+        > div, > img {
+            margin: 1em 2em;
+            max-width: 600pt;
+        }
+        > img { height: 40vh; }
+    }
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    div {
+        h1, h2, h3, p { text-align: center; }
+    }
+}
+
+// Get started block
+.useApp {
+    > div {
+        display: flex;
+        align-items: center;
+        > img,
+        > svg {
+            margin-right: 0.5em;
+            min-height: 100%;
+        }
+        > svg.dark {
+            @media(prefers-color-scheme: 'dark') {
+                g > path,
+                path { fill: #fff; }
+            }
+        }
+        > div { margin: 0.25em 0; }
+        > div > a { line-height: 1em; }
+    }
+}
+
+div.gsText {
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+
+// Team block
+div.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: stretch;
+    margin: 2em auto;
+    > .card {
+        background: #ddd;
+        @media(prefers-color-scheme: 'dark') {
+            background: #292929;
+            color: #fff;
+        }
+        transition: 150ms box-shadow ease-in-out;
+        &:hover,
+        &:focus {
+            @media (prefers-color-scheme: 'dark') {
+                box-shadow: 0 1em 8px #0f0f0f;
+            }
+            box-shadow: 0 1em 8px #aaaaaa;
+        }
+        display: flex;
+        flex-direction: column;
+        max-width: 14em;
+        flex-grow: 2;
+        border-radius: 0.5em;
+        margin: 1em;
+        a {
+            margin: 0;
+            text-decoration: none;
+            color: inherit;
+            > .cardPhoto {
+                width: 100%;
+                border-radius: 0.4em 0.4em 0 0;
+            }
+            > .cardText { padding: 0 1em 1em 1em; }
+        }
+    }
+}
+
+// Footer
+footer {
+    background: #111;
+    color: #fff;
+    padding: 2em 10vw;
+    ul {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        padding-left: 0;
+        margin-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        li {
+            margin-left: .5rem;
+            margin-right: .5rem;
+            &:first-child { margin-left: 0; }
+            a {
+                color: inherit;
+                @include link-hover;
+            }
+        }
+    }
+}
+
+// For blog posts and other pages that are mostly text
+.readable {
+    margin: 2rem auto;
+    padding: 0 calc(calc(16px*0.5)*4);
+    max-width: calc(calc(16px*0.5)*152);
+    a {
+        color: inherit;
+        @include link-hover;
+    }
+    .lesser {
+        opacity: .5;
+        font-style: italic;
+    } // Used for « lesser » important things such as the author and date of publication 
+}

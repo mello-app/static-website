@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block title %}{{page.title}} - Mello{% endblock title %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+
+{% block ogtitle %}{{ page.title }}{% endblock ogtitle %}
+{% block twtitle %}{{ page.title }}{% endblock twtitle %}
+
+{% block ogtype %}article{% endblock ogtype %}
+{% block twtype -%}{%- if page.extra.image -%}summary_large_image{%else%}summary{%- endif -%}{%- endblock twtype %}
+
+{% block ogdesc %}{{ page.description }}{% endblock ogdesc %}
+{% block twdesc %}{{ page.description }}{% endblock twdesc %}
+
+{% block ogurl %}{{ page.permalink | safe }}{% endblock ogurl%}
+
+{% block ogimage -%}{%- if page.extra.image -%}{{ get_url(path=page.extra.image) | safe }}{%else%}{{ get_url(path=config.extra.ogimage) | safe }}{%- endif -%}{%- endblock ogimage %}
+{% block twimage -%}{%- if page.extra.image -%}{{ get_url(path=page.extra.image) | safe }}}{%else%}{{ get_url(path=config.extra.ogimage) | safe }}{%- endif -%}{%- endblock twimage %}
+
+{% block content %}
+<header>
+    {% include "partials/nav.html" %}
+    <div class="content">
+        <h1>{{ page.title }}</h1>
+    </div>
+    <div class="nav"></div>
+</header>
+<article class="readable">
+    {{ page.content | safe }}
+    <h4 class="lesser">Written by {{ page.extra.author }} &bull; {{ page.date | date(format="%e %B, %Y") }}</h4>
+</article>
+{% endblock content %}

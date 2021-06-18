@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="preconnect" href="https://cdn.doamatto.xyz" />
+        <link rel="dns-prefetch" href="//cdn.doamatto.xyz" />
+        <link rel="preconnect" href="https://alpine.gcp.doamatto.xyz" />
+        <link rel="dns-prefetch" href="//alpine.gcp.doamatto.xyz" />
+        <link rel="preconnect" href="https://rsms.me" />
+        <link rel="dns-prefetch" href="//rsms.me" />
+        {% block rss %}
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+        {% endblock %}
+        <link rel="author" href="humans.txt" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        
+        <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+        <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
+        {% block seo -%}
+          <meta property="og:site_name" content="{% block ogsitename %}{{config.title}}{% endblock ogsitename %}" />
+          <meta name="author" content="{{ config.extra.author }}" />
+          
+          <meta property="og:title" content="{% block ogtitle %}{{config.title}}{% endblock ogtitle %}" />
+          <meta name="twitter:title" content="{% block twtitle %}{{config.title}}{% endblock twtitle %}" />
+          
+          <meta property="og:description" content="{% block ogdesc %}{{config.description}}{% endblock ogdesc %}" />
+          <meta name="twitter:description" content="{% block twdesc %}{{config.description}}{% endblock twdesc %}" />
+          
+          <meta property="og:image" content="{% block ogimage %}/android-chrome-192x192.png{% endblock ogimage %}" />
+          <meta name="twitter:image" content="{% block twimage %}/android-chrome-192x192.png{% endblock twimage %}" />
+
+          <meta name="twitter:card" content="{% block twtype %}summary{% endblock twtype %}" />
+          <meta propetry="og:type" content="{% block ogtype %}website{% endblock ogtype %}" />
+
+          <meta property="og:url" content="{% block ogurl %}{{config.base_url | safe }}{% endblock ogurl %}" />
+          <meta name="twitter:site" content="@getmelloapp" />
+          <meta name="twitter:creator" content="@getmelloapp" />
+          {% if page.date -%}
+            <meta property="article:published_time" content="{{ page.date }}" />
+          {%- endif %}
+        {%- endblock seo -%}
+        <link rel="stylesheet" href="/styles.css"/>
+        <link rel="stylesheet" href="https://cdn.doamatto.xyz/inter.min.css" integrity="sha384-qEZA/KrtbBoR2bh9+JzkzK+WdD0MRAHQ+GH+ABOTVhBeelVv3LjyMeGXXpmSvoGv" crossorigin="anonymous"/>
+    </head>
+    <body>
+    	<div>
+    	  {% block content %}{% endblock %}
+    	</div>
+      <footer>
+          <div>
+              <img src="/assets/logo_w.svg" alt="Mello logo">
+              <h3 class="footer">Mello</h3>
+          </div>
+          <ul>
+            <li><a href="/blog" title="View the privacy policy">Blog.</a></li>
+            <li><a href="/privacy" title="View the privacy policy">Privacy.</a></li>
+		</ul>
+		<p class="footer">© 2020-2021 Mello and individual contributors. Code licensed under the 3-Clause BSD License and GNU GPL v3.0. All other material is licensed under the CC BY-4.0 license.</p>
+    </footer>
+    </body>
+    <script async defer data-domain="getmello.org" src="https://alpine.gcp.doamatto.xyz/js/plausible.js"></script>
+</html>
