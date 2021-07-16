@@ -20,7 +20,7 @@ When using your account, you can choose to favourite meditations, sleep stories,
 
 Your settings that you use in the app will automatically sync between devices to give a seamless experience. This is stored alongside your favourited content IDs.
 
-If you are on our website (`getmello.org`) or our web app (`app.getmello.org`), we also use a self-hosted Plausible server to privately aggregate information to better understand what our audience uses in terms of devices. The following data is collected by Plausible:
+If you are on our website (`getmello.org`) or our web app (`app.getmello.org`), we also use a self-hosted Umami server to privately aggregate information to better understand what our audience uses in terms of devices. The following data is collected by Umami:
 - **Page URL—** We use this to see how many times a page has been viewed
 - **HTTP referer—** We use this to see how many people are coming from certain websites
 - **Browser—** We use this to see what browsers and browser versions are being used
@@ -34,6 +34,7 @@ None of this data can be linked back to you by Mello, or any of the third-partie
 We do not sell your data with any third-parties. [Some data is shared with third-parties](#who-has-access-to-or-processes-your-data) so that we may provide our service.
 
 ### Who has access to or processes your data?
+The following two processors only apply to the web (`app.getmello.org`) and mobile apps.
 [Supabase](https://supabase.io/auth), our login provider, has access to:
 - email addresses (either the one provided by you or Apple),
 - your first and last name (if you signed in with Apple).
@@ -45,11 +46,9 @@ We do not sell your data with any third-parties. [Some data is shared with third
 
 The following three processors only apply to the website (`getmello.org`) and web app (`app.getmello.org`).
 
-[Google Cloud Platform](https://cloud.google.com), our host for Plausible, does not have access to any of the data stored on our instance. You can see [the « How we protect your data? » section for more information.](#how-do-we-protect-your-data) 
+[Uberspace](https://uberspace.de), our host for Umami, and [Matt Ronchetto (doamatto)](https://alpine.gcp.doamatto.xyz), the maintainer of the Umami instance, has access to the entirety of the Uberspace instance. This is no more access than the general public, as mentioned below, to analytical data.
 
-[Matt Ronchetto, or doamatto](https://alpine.gcp.doamatto.xyz), the maintainer of the Plausible instance, has access to the entirety of the Google Cloud Platform server. This is no more access than the general public, as mentioned below, to analytical data.
-
-[The general public](https://alpine.gcp.doamatto.xyz/getmello.org) has access to all the data collected by Plausible.
+[The general public](https://u.nneko.me/share/GmGPTbyO) has access to all the data collected by Umami.
 
 If you sign in with Apple, you are under their [privacy policy](https://www.apple.com/legal/privacy/en-ww/). We recommend that you review it to understand their data policies.
 
@@ -61,7 +60,7 @@ Mello, its servers, and its members are under the jurisdiction of the United Sta
 ### How do we protect your data?
 Truth be told: there's no be all and end all to protect your data. But, we do our best to use modern-day encryption methods as well as strict HSTS, DNSSEC, and CSP to ensure your experience is the way it was intended. We hash passwords with Argon2 locally, before sending them off your device.
 
-We have signed special data protection agreements (DPAs) with Google to protect the data on our Google Cloud instance. We also use our own encryption keys, not the ones provided by Google, to encrypt everything on our instance. We safeguard these keys in a secure, physical location to ensure that no third parties can gain access.
+We have signed special data protection agreements (DPAs) with Uberspace to protect the data on our Uberspace instance.
 
 ### What if there's a data breach?
 In the event of a data breach, we will send out an email notification, regardless of if you were affected or not, with password reset notifications, following information pertaining to what things may have been compromised. This will all be done as soon as we find said breach. Once this issue is patched, we may release information on the issue as well as a write-up on how we fixed it on GitHub.
